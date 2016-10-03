@@ -23,16 +23,20 @@ for line in open(filename):
 v = np.ones(N)
 
 
-# Compute the "Google" Matrix from the adjacency matrix.
+# Compute the "Google" Matrix from the adjacency matrix, A.
+# For illustration purposes only. *Not* efficient!
 def Google_Matrix(A, m):
     N = A.shape[0]
     v = np.ones(N)
 
+    # Calculate the degree of each node
     KT = np.dot(A.T, v)
 
+    # Normalize the columns
     for i in range(N):
         A.T[i] = A.T[i]/KT[i]
 
+    # Add random links
     S = np.ones((N, N))/N
     G = (1-m)*A+m*S
 
