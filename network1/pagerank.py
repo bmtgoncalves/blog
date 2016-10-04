@@ -2,7 +2,7 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
-
+import seaborn
 
 filename = "celegans.txt"
 N = 297
@@ -60,7 +60,7 @@ x0 = Power_Method(G, iter)
 deg = A.sum(axis=1)
 
 plt.plot(deg, x0, 'b*')
-plt.xlabel('in-degree')
+plt.xlabel('in-degree (k)')
 plt.ylabel('PageRank')
 plt.savefig('PageRank.png')
 plt.close()
